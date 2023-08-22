@@ -3,82 +3,111 @@
 
 # Creating Lists
 #1. ✅ Create a list of 10 pet names
-pet_names = ['Rose', 'Meow Meow Beans', 'Mr.Legumes', 'Luke', 'Lea', 'Princess Grace', 'Spot', 'Tom', 'Mini', 'Paul']
+pet_names = ['Rose', 'Meow Meow Beans', 'Mr.Legumes', 'Luke', 'Lea', 'Luke', 'Princess Grace', 'Spot', 'Tom', 'Mini', 'Paul', 'Spot']
 
 # Reading Information From Lists
 #2. ✅ Return the first pet name 
-
+# print(pet_names[0])
 
 #3. ✅ Return all pet names beginning from the 3rd index
-
+# print(pet_names[3:])
 
 #4. ✅ Return all pet names before the 3rd index
+# print(pet_names[:3])
 
 
 #5. ✅  Return all pet names beginning from the 3rd index and up to the 7th
-
+# print(pet_names[3:7])
 
 #6. ✅ Find the index of a given element
-
+# print(pet_names.index('Tom'))
 
 #7. ✅ Reverse the original list
 
+# destructive
+# pet_names.reverse()
+# print(pet_names)
+
+# this is non-destructive
+# print(pet_names[::-1])
+# print(pet_names)
 
 #8. ✅ Return the frequency of a given element 
-
+# print(pet_names.count('rose'))
 
 # Updating Lists
 #9. ✅ Change the first element to all uppercase 
-
+# print(pet_names[0].upper())
 
 #10. ✅ Append a new name to the list
+# pet_names.append('Steve')
+# print(pet_names)
+
+# pet_names.append('Sebastian')
+# print(pet_names)
 
 
 #11. ✅ Add a new name at a specific index
+# pet_names[2].append('Sebastian')
 
+# pet_names.insert(2, 'Sebastian')
+# print(pet_names)
 
 #12. ✅ Add two lists together 
+# new_pets = ['Steve', 'Sebastian']
 
+# this is destructive
+# pet_names += new_pets
+# print(pet_names)
+
+# print a new list
+# print(pet_names + new_pets)
 
 #13. ✅ Remove the final element from the list
-
+# pet_names.pop()
 
 #14. ✅ Remove element by specific index
-
+# pet_names.pop(0)
+# print(pet_names)
 
 #15. ✅ Remove a specific element 
+# pet_names.remove('Luke')
+# print(pet_names)
 
 
 #16. ✅ Remove all pet names from the list
-
+# pet_names.clear()
+# print(pet_names)
 
 #Tuple 
 # 📚 Review With Students:
-    # Mutable, Immutable, Changeable, Unchangeable
+    # Immutable, Unchangeable
 
 #17. ✅ Create a Tuple of pet 10 ages 
-
+pet_ages = (2, 4, 1, 6, 12, 15, 9, 7, 13, 2)
+# pet_ages.append(23)
+# print(type("pet_names"))
 
 #18. ✅ Print the first pet age
-
+# print(pet_ages[0])
 
 # Testing Changeability 
 #19. ✅ Attempt to remove an element with ".pop" (should error)
-
+# pet_ages.pop()
 
 #20. ✅ Attempt to change the first element (should error)
 
 
 # Tuple Methods
 #21. ✅ Return the frequency of a given element
-
+# print(pet_ages.count(2))
 
 #22. ✅ Return the index of a given element 
-
+# print(pet_ages.index(15))
 
 #23. ✅ Create a Range 
 #Note:  Ranges are primarily used in loops
-
+# range = range(1, 10, 5)
 
 # Demo Sets (Stretch Goal)
 #24. ✅ Create a set of 3 pet foods
@@ -87,7 +116,7 @@ pet_names = ['Rose', 'Meow Meow Beans', 'Mr.Legumes', 'Luke', 'Lea', 'Princess G
 # Demo Dictionaries 
 # Creating 
 #25. ✅  Create a dictionary of pet information with the keys "name", "age" and "breed"
-pet_info_rose = {'name':'rose','age':11,'breed':'domestic long '}
+pet_info_rose = {'name':'rose','age':11,'breed':'domestic long'}
 
 
 #26. ✅  Use dict to create a dictionary of pet information with the keys "name", "age" and "breed"
@@ -96,27 +125,33 @@ pet_info_spot = dict(name='Spot', age=25, breed='boxer')
 
 # Reading
 #27. ✅ Print the pet attribute of "name" using bracket notation 
-
+# print(pet_info_rose["name"])
 
 #28. ✅ Print the pet attribute of "age" using ".get"
 #Note: ".get" is preferred over bracket notation in most cases because it will return "None" instead of an error
-
+# print(pet_info_rose.get('name'))
 
 # Updating 
 #29. ✅ Update the pets age to 12
-
+# pet_info_rose['age'] = 12
+# print(pet_info_rose)
 
 #30. ✅ Update the other pets age to 26
+# pet_info_spot.update(color = 'red')
 
 
 # Deleting
 #30. ✅ Delete a pets age using the "del" keyword 
-
+# del pet_info_spot['age']
+# print(pet_info_spot)
 
 #31. ✅ Delete the other pets age using ".pop"
-
+# pet_info_rose.pop('age')
+# print(pet_info_rose)
 
 #32. ✅ Delete the last item in the pet dictionary using "popitem()"
+# pet_info_rose.popitem()
+# print(pet_info_rose)
 
 
 # Demo Loops 
@@ -139,13 +174,17 @@ pet_info = [
     ]
 
 #33. ✅ Loop through a range of 10 and print every number within the range
-
+# for i in range(1,11):
+#     print(i)
+    
 
 #34. ✅ Loop through a range between 50 and 60 that iterates by 2 and print every number
-
+# for i in range(50,60, 2):
+#     print(i)
 
 #35. ✅ Loop through the "pet_info" list and print every dictionary 
-
+# for pet in pet_info:
+#     print(pet)
 
 #36. ✅ Create a function that takes a list as an argument 
     # The function should use a "for" loop to loop through the list and print every item 
@@ -172,15 +211,24 @@ pet_info = [
 
 # map like 
 #39. ✅ Use list comprehension to return a list containing every pet name from "pet_info" changed to uppercase
+# print_pet_names = [pet.get('name').upper() for pet in pet_info]
+# print(print_pet_names)
 
 
+        
 # find like
 #40. ✅ Use list comprehension to find a pet named spot
+# for pet in pet_info:
+#     if pet.get('name') == 'spot':
+#         print(pet.get('name'))
 
+find_spot = [pet.get('name') for pet in pet_info if pet.get('name') == 'spot']
+print(find_spot)
 
 # filter like
 #41. ✅ Use list comprehension to find all of the pets under 3 years old
-
+pet_under_3 = [pet for pet in pet_info if pet.get('age') <= 3]
+print(pet_under_3)
 
 #43. ✅ Create a generator expression matching the filter above. Compare and contrast the generator to the list comprehension. 
 
